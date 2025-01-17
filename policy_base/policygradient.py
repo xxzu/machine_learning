@@ -29,7 +29,8 @@ class REINFORCEAgent:
     def select_action(self, state):
         state = torch.FloatTensor(state).unsqueeze(0)  # 添加批量维度
         probs = self.policy_network(state)
-        action = torch.multinomial(probs, num_samples=1).item()  # 采样动作
+        # 采样动作:用于从给定的概率分布中进行采样。它返回从概率分布中根据给定的样本数选择的索引。
+        action = torch.multinomial(probs, num_samples=1).item()  
         return action, probs[0, action]
 
     def compute_discounted_rewards(self, rewards):

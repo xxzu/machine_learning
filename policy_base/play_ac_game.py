@@ -1,10 +1,11 @@
-import gym
-import sys
-import os
-sys.path.append('.')
-from policy_base.policygradient import PolicyNetwork,REINFORCEAgent
 
+import sys
+
+sys.path.append('.')
+
+from policy_base.actor_critic import Actor ,ActorCriticAgent
 import torch
+import gym
 
 
 
@@ -12,12 +13,11 @@ if __name__ == '__main__':
     env = gym.make('CartPole-v1', render_mode='human')
     state_size = env.observation_space.shape[0]
     action_size = env.action_space.n
+    agent  = ActorCriticAgent(state_size,action_size)
     
-    agent = REINFORCEAgent(state_size,action_size)
-    
-    agent.policy_network.load_state_dict(torch.load('/home/ubuntu/machine_learning/policy_base/pg.pth'))
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model = agent.policy_network.to(device=device)
+    agent.actor.load_state_dict(torch.load('/home/ubuntu/machine_learning/policy_base/ac.pth'))
+    device  =  torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = agent.actor.to(device=device)
     
     episodes = 5 # 玩几局游戏
     for e in range(episodes):
@@ -50,5 +50,4 @@ if __name__ == '__main__':
     print('done')
 
     env.close()
-    
     
