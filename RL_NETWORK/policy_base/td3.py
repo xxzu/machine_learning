@@ -144,27 +144,7 @@ class TD3:
                 target_param.data.copy_(self.tau * param.data + (1 - self.tau) * target_param.data)
 
 
-# env = gym.make("Pendulum-v1")
-# state_dim = env.observation_space.shape[0]
-# action_dim = env.action_space.shape[0]
-# max_action = float(env.action_space.high[0])
 
-# td3 = TD3(env, state_dim, action_dim, max_action)
-
-# for episode in range(1000):
-#     state = env.reset()
-#     episode_reward = 0
-#     done = False
-
-#     while not done:
-#         action = td3.select_action(np.array(state))
-#         next_state, reward, done, _ = env.step(action)
-#         td3.memory.push(state, action, reward, next_state, done)
-#         td3.train()
-#         state = next_state
-#         episode_reward += reward
-
-#     print(f"Episode: {episode}, Reward: {episode_reward}")
 # TD3 训练脚本
 if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

@@ -13,3 +13,11 @@ test.py
 policy_base/ac.pth
 policy_base/dpg_actor.pth
 policy_base/__pycache__/actor_critic.cpython-310.pyc
+RL_NETWORK/policy_base/__pycache__/actor_critic.cpython-310.pyc
+RL_NETWORK/policy_base/__pycache__/policygradient.cpython-310.pyc
+RL_NETWORK/value_base/ddqn_q_network.pth
+RL_NETWORK/value_base/dqn_q_network.pth
+RL_NETWORK/value_base/__pycache__/dqn_demo.cpython-310.pyc
+RL_NETWORK/policy_base/ac.pth
+RL_NETWORK/policy_base/pg.pth
+RL_NETWORK/policy_base/dpg_actor.pth
