@@ -21,3 +21,12 @@ RL_NETWORK/value_base/__pycache__/dqn_demo.cpython-310.pyc
 RL_NETWORK/policy_base/ac.pth
 RL_NETWORK/policy_base/pg.pth
 RL_NETWORK/policy_base/dpg_actor.pth
+FLANN_matches.jpg
+images1.jpg
+matches.jpg
+SIFT_matches.jpg
+
+SIFTimages1.jpg
+stitched.jpg
+images/photo3.jpg
+images/photo4.jpg
